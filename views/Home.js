@@ -1,0 +1,1 @@
+import { TouchableOpacity, TextInput, Image, View, ScrollView, Text, StyleSheet } from "react-native";
