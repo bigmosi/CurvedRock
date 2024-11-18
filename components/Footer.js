@@ -1,4 +1,5 @@
 import { StyleSheet, View, Text, TextInput, TouchableOpacity } from "react-native";
+import { Navigation } from "react-native-navigation";
 import { useState } from "react";
 
 const Footer = () => {
@@ -31,9 +32,23 @@ const Footer = () => {
             </View>
             <View style={styles.container}>
                 <Text style={styles.support}>COMPANY INFO</Text>
-                <Text style={styles.supportOptions}>ABOUT</Text>
-                <Text style={styles.supportOptions}>CAREERS</Text>
-                <Text style={styles.supportOperations}>PRIVACY & TERMS</Text>
+                <Text
+                    style={styles.supportOptions}
+                    onPress={() => Navigation.push('carved', {
+                        component: {
+                            name: 'About'
+                        }
+                    })
+                    }
+                >ABOUT</Text>
+                <Text style={styles.supportOptions}
+                  onPress={() => Navigation.push('carved', {
+                    component: {
+                        name: 'Careers'
+                    }
+                  })}
+                >CAREERS</Text>
+                <Text style={styles.supportOptions}>PRIVACY & TERMS</Text>
                 <Text style={styles.supportOptions}>FOLLOW US</Text>
             </View>
         </View>
@@ -72,7 +87,7 @@ const styles = StyleSheet.create({
         width: '40%',
         backgroundColor: '#000000',
         marginTop: 10,
-        borderRadius: 5,
+        borderRadius: 20,
     },
     footerButtonText: {
         fontSize: 20,
