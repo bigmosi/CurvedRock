@@ -11,30 +11,30 @@ const Footer = () => {
                 <Text style={styles.offers}>
                     Exclusive sales, special offers, and more.
                 </Text>
-                <TextInput 
-                 style={styles.footerInput}
-                 onChangeText={text => setEmailText(text)}
-                 value={emailText}
-                 />
-                 <TouchableOpacity style={styles.footerButton}>
+                <TextInput
+                    style={styles.footerInput}
+                    onChangeText={text => setEmailText(text)}
+                    value={emailText}
+                />
+                <TouchableOpacity style={styles.footerButton}>
                     <Text style={styles.footerButtonText}>SIGN UP</Text>
-                 </TouchableOpacity>
+                </TouchableOpacity>
             </View>
             <View style={styles.container}>
                 <Text style={styles.support}>CUSTOMER SUPPORT</Text>
-                <Text style={styles.supportOperations}>CONTACT US</Text>
-                <Text style={styles.supportOperations}>ORDER TRACKER</Text>
-                <Text style={styles.supportOperations}>RETURN & REFUNDS</Text>
-                <Text style={styles.supportOperations}>SIZING STORE LOCATOR</Text>
-                <Text style={styles.supportOperations}>SITE MAP</Text>
+                <Text style={styles.supportOptions}>CONTACT US</Text>
+                <Text style={styles.supportOptions}>ORDER TRACKER</Text>
+                <Text style={styles.supportOptions}>RETURN & REFUNDS</Text>
+                <Text style={styles.supportOptions}>SIZING STORE LOCATOR</Text>
+                <Text style={styles.supportOptions}>SITE MAP</Text>
 
             </View>
             <View style={styles.container}>
                 <Text style={styles.support}>COMPANY INFO</Text>
-                <Text style={styles.supportOperations}>ABOUT</Text>
-                <Text style={styles.supportOperations}>CAREERS</Text>
+                <Text style={styles.supportOptions}>ABOUT</Text>
+                <Text style={styles.supportOptions}>CAREERS</Text>
                 <Text style={styles.supportOperations}>PRIVACY & TERMS</Text>
-                <Text style={styles.supportOperations}>FOLLOW US</Text>
+                <Text style={styles.supportOptions}>FOLLOW US</Text>
             </View>
         </View>
     );
@@ -60,21 +60,21 @@ const styles = StyleSheet.create({
         color: '#000000',
         paddingBottom: 10
     },
-    footerButtonText: {
+    footerInput: {
         borderWidth: 1,
         width: 175,
         height: 40,
         marginTop: 10,
         backgroundColor: '#FFFFFF',
-        fontFamily: 'OpenSans-Light'
+        fontFamily: 'OpenSans-Light',
     },
     footerButton: {
         width: '40%',
         backgroundColor: '#000000',
         marginTop: 10,
-        borderRadius: 5
+        borderRadius: 5,
     },
-    footerButton: {
+    footerButtonText: {
         fontSize: 20,
         color: '#FFFFFF',
         alignSelf: 'center'
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         marginBottom: 10
     },
-    supportOperations: {
+    supportOptions: {
         fontFamily: 'OpenSans-Regular',
         fontSize: 12,
         color: '#FFFFFF',
