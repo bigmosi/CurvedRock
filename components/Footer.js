@@ -23,7 +23,11 @@ const Footer = () => {
             </View>
             <View style={styles.container}>
                 <Text style={styles.support}>CUSTOMER SUPPORT</Text>
-                <Text style={styles.supportOptions}>CONTACT US</Text>
+                <Text style={styles.supportOptions} onPress={() => Navigation.push('carved', {
+                    component: {
+                        name: 'Contact'
+                    }
+                })}>CONTACT US</Text>
                 <Text style={styles.supportOptions}>ORDER TRACKER</Text>
                 <Text style={styles.supportOptions}>RETURN & REFUNDS</Text>
                 <Text style={styles.supportOptions}>SIZING STORE LOCATOR</Text>
@@ -42,11 +46,11 @@ const Footer = () => {
                     }
                 >ABOUT</Text>
                 <Text style={styles.supportOptions}
-                  onPress={() => Navigation.push('carved', {
-                    component: {
-                        name: 'Careers'
-                    }
-                  })}
+                    onPress={() => Navigation.push('carved', {
+                        component: {
+                            name: 'Careers'
+                        }
+                    })}
                 >CAREERS</Text>
                 <Text style={styles.supportOptions}>PRIVACY & TERMS</Text>
                 <Text style={styles.supportOptions}>FOLLOW US</Text>
