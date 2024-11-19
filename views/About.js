@@ -1,3 +1,4 @@
+import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import { StyleSheet, View, ScrollView, Image, Text, TouchableOpacity } from "react-native";
 import { Navigation } from "react-native-navigation";
 import Header from "../components/Header";
@@ -9,35 +10,46 @@ const About = (props) => {
     const bio = `CarvedRock started for purely selfish regions. Our founder, John Doe, was an adventurer from the start. Between rafting on the Amazon and climbing Everest he tried to do it all. Experiences were important. Over time he learned finding the best gear was a job of its own. boots from thie store, tents and climbing supplies from another. John wished there was a one stop sho for this. Since he couldnt find what he wanted, then CarvedRock was born`
     const stores = `With 15 locations across 6 States you may find a brick and mortar location nearby. No worries if a store is not close, you can alswy shop on CarvedRock.com. And now with our new mobile app you will even be able to shop directly from your mobile device.`
 
+    const LongPressGesture = Gesture.LongPress().onEnd((e, success) => {
+        if (success) {
+            Navigation.push(props.componentId, {
+                component: {
+                    name: 'Home'
+                }
+            });
+        }
+    });
 
     return (
-        <View style={styles.container}>
-            <ScrollView>
-                <Header />
-                <Image style={styles.imageStyle}
-                    source={require('../assets/shutterstock_440789620.jpg')}
-                />
-                <Text style={styles.aboutTitle}>We Love New Adventure</Text>
-                <Text style={styles.aboutText}>{intro}</Text>
-                <Image style={styles.imageStyle}
-                    source={require('../assets/shutterstock_492010117.jpg')}
-                />
-                <Text style={styles.aboutTitle}>How We Started</Text>
-                <Text style={styles.aboutText}>{bio}</Text>
-                <Image style={styles.imageStyle}
-                    source={require('../assets/shutterstock_273547007.jpg')}
-                />
-                <Text style={styles.aboutTitle}>Where Can You Find us</Text>
-                <Text style={styles.aboutText}>{stores}</Text>
-                <TouchableOpacity
-                    style={styles.aboutButton}
-                    onPress={() => Navigation.pop(props.componentId)}
-                >
-                    <Text style={styles.aboutButtonText}>GO BACK</Text>
-                </TouchableOpacity>
-                <Footer />
-            </ScrollView>
-        </View>
+        <GestureDetector gesture={LongPressGesture}>
+            <View style={styles.container}>
+                <ScrollView>
+                    <Header />
+                    <Image style={styles.imageStyle}
+                        source={require('../assets/shutterstock_440789620.jpg')}
+                    />
+                    <Text style={styles.aboutTitle}>We Love New Adventure</Text>
+                    <Text style={styles.aboutText}>{intro}</Text>
+                    <Image style={styles.imageStyle}
+                        source={require('../assets/shutterstock_492010117.jpg')}
+                    />
+                    <Text style={styles.aboutTitle}>How We Started</Text>
+                    <Text style={styles.aboutText}>{bio}</Text>
+                    <Image style={styles.imageStyle}
+                        source={require('../assets/shutterstock_273547007.jpg')}
+                    />
+                    <Text style={styles.aboutTitle}>Where Can You Find us</Text>
+                    <Text style={styles.aboutText}>{stores}</Text>
+                    <TouchableOpacity
+                        style={styles.aboutButton}
+                        onPress={() => Navigation.pop(props.componentId)}
+                    >
+                        <Text style={styles.aboutButtonText}>GO BACK</Text>
+                    </TouchableOpacity>
+                    <Footer />
+                </ScrollView>
+            </View>
+        </GestureDetector>
     );
 }
 
@@ -56,7 +68,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         color: '#000000',
         textDecorationLine: 'underline',
-        paddingBottom: 5        
+        paddingBottom: 5
     },
     aboutText: {
         fontFamily: 'OpenSans-Regular',
@@ -76,7 +88,7 @@ const styles = StyleSheet.create({
     aboutButtonText: {
         fontSize: 25,
         color: '#FFFFFF'
-    }    
+    }
 });
 
 export default About;

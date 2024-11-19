@@ -9,6 +9,10 @@ const Contact = (props) => {
     const [email, setEmail] = useState('Enter Email');
     const [message, setMessage] = useState('Enter Message');
 
+    const showMessage = () => {
+        Alert.alert(`${name}`, `${message}`);
+    }
+
     return (
         <View style={styles.container}>
             <ScrollView>
@@ -36,7 +40,7 @@ const Contact = (props) => {
                     multiline={true}
                     numberOfLines={10}
                 />
-                <TouchableOpacity style={styles.submitButton}>
+                <TouchableOpacity style={styles.submitButton} onPress={showMessage}>
                     <Text style={styles.buttonText}>SEND MESSAGE</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -81,6 +85,7 @@ const styles = StyleSheet.create({
     messageInput: {
         alignSelf: 'center',
         borderWidth: 1,
+        textAlign: 'center',
         width: 320,
         marginTop: 10,
         backgroundColor: '#FFFFFF',
