@@ -4,6 +4,15 @@ import Home from './views/Home';
 import About from './views/About';
 import Careers from './views/Careers';
 import Contact from './views/Contact';
+import Trail from './views/Trail';
+import TrailDetail from './views/TrailDetail';
+
+Navigation.registerComponent('TrailDetail',
+    () => gestureHandlerRootHOC(TrailDetail),
+    () => TrailDetail);
+Navigation.registerComponent('Trial',
+    () => gestureHandlerRootHOC(Trail),
+    () => Trail);
 
 Navigation.registerComponent('Home', () => Home);
 Navigation.registerComponent('About',

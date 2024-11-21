@@ -7,11 +7,12 @@ import {
     Text, 
     TouchableOpacity 
 } from 'react-native';
+import { Navigation } from 'react-native-navigation';
 import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const Home = () => {
+const Home = (props) => {
     const [searchText, setSearchText] = useState('What can we help you find?');
     
     return (
@@ -59,7 +60,11 @@ const Home = () => {
                     />
                     <Text style={styles.trailReviewPark1}>ASPHALT</Text>
                     <Text style={styles.trailReviewPark2}>NATIONAL PARK</Text>
-                    <TouchableOpacity style={styles.trailButton}>
+                    <TouchableOpacity style={styles.trailButton} onPress={() => Navigation.push(props.componentId, {
+                        component: {
+                            name: 'Trial'
+                        }
+                    })}>
                         <Text style={styles.trailButtonText}>SEE REVIEW</Text>
                     </TouchableOpacity>    
                 </View> 
