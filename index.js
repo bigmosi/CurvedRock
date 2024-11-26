@@ -6,7 +6,15 @@ import Careers from './views/Careers';
 import Contact from './views/Contact';
 import Trail from './views/Trail';
 import TrailDetail from './views/TrailDetail';
+import Store from './views/Store';
+import BootShop from './views/BootShop';
 
+Navigation.registerComponent('BootShop',
+    () => gestureHandlerRootHOC(BootShop),
+    () => BootShop);
+Navigation.registerComponent('Store',
+    () => gestureHandlerRootHOC(Store),
+    () => Store);
 Navigation.registerComponent('TrailDetail',
     () => gestureHandlerRootHOC(TrailDetail),
     () => TrailDetail);
