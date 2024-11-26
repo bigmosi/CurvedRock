@@ -2,7 +2,7 @@ import { GestureDetector, Gesture } from 'react-native-gesture-handler';
 import { Navigation } from 'react-native-navigation';
 import { 
     StyleSheet, 
-    FlatList , 
+    FlatList ,  
     View, 
     Text, 
     ActivityIndicator 
@@ -74,19 +74,18 @@ const styles = StyleSheet.create({
     storeTitleRow: {
         backgroundColor: '#000000',
         paddingTop: 10,
-        paddingBottom: 10,
         marginTop: 5,
         alignItems: 'center'
     },
     storeTitle: {
         fontFamily: 'OpenSans-Bold',
         fontSize: 30,
-        color: 'FFFFFF'
+        color: '#FFFFFF'
     },
     message: {
         alignSelf: 'center',
         fontFamily: 'OpenSans-BoldItalic',
-        color: '#000000'
+        color: '#000000'    
     }
 });
 

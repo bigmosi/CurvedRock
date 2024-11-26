@@ -8,7 +8,11 @@ import Trail from './views/Trail';
 import TrailDetail from './views/TrailDetail';
 import Store from './views/Store';
 import BootShop from './views/BootShop';
+import Boot from './views/Boot';
 
+Navigation.registerComponent('Boot',
+    () => gestureHandlerRootHOC(Boot),
+    () => Boot);
 Navigation.registerComponent('BootShop',
     () => gestureHandlerRootHOC(BootShop),
     () => BootShop);

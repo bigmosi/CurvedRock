@@ -11,6 +11,7 @@ import { Navigation } from 'react-native-navigation';
 import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Shops from '../components/Shops';
 
 const Home = (props) => {
     const [searchText, setSearchText] = useState('What can we help you find?');
@@ -68,6 +69,18 @@ const Home = (props) => {
                         <Text style={styles.trailButtonText}>SEE REVIEW</Text>
                     </TouchableOpacity>    
                 </View> 
+                <Shops
+                  imageSRC={'https://i.imgur.com/GvAlRYf.jpg'}
+                  title='TOP TIER GEAR'
+                  description='BROWSE ALL GEAR'
+                  target='Store'
+                />
+                 <Shops
+                  imageSRC={'https://i.imgur.com/M2nMlMw.jpg'}
+                  title='TOP HAPPY FEET'
+                  description='BROWSE BOOTS'
+                  target='BootShop'
+                />
                 <Footer />   
             </ScrollView>    
         </View>    
