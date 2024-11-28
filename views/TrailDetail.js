@@ -1,12 +1,12 @@
 import { GestureDetector, Gesture } from 'react-native-gesture-handler';
 import { Navigation } from 'react-native-navigation';
-import {
-    StyleSheet,
-    ScrollView,
-    Image,
-    View,
-    Text,
-    ActivityIndicator
+import { 
+    StyleSheet, 
+    ScrollView, 
+    Image, 
+    View, 
+    Text, 
+    ActivityIndicator 
 } from 'react-native';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
@@ -16,18 +16,18 @@ const TrailDetail = (props) => {
     const [trailData, setTrailData] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-
+    
     const getData = async () => {
         try {
-            const {
-                data: review
-            } = await axios.get(`http://192.168.1.66:3000/trailreviews/${props.id}`);
+            const { 
+                data: review 
+            } = await  axios.get(`http://192.168.1.70:3000/trailreviews/${props.id}`);
             setTrailData(review);
-        } catch (err) {
+        } catch(err) {
             setError(true);
         } finally {
             setLoading(false);
-        }
+        }   
     };
 
     useEffect(() => {
@@ -39,32 +39,30 @@ const TrailDetail = (props) => {
             Navigation.pop(props.componentId);
         }
     });
-
-    return (
+    
+    return(
         <GestureDetector gesture={longPressGesture}>
             <View style={styles.container}>
                 <ScrollView>
                     <Header />
-                    {
-                        loading ? (
-                            <ActivityIndicator size="large" />
-                        ) : (
-                            <View>
-                                <View style={styles.reviewTitleRow}>
-                                    <Text style={styles.reviewTitle}>{trailData.title}</Text>
-                                </View>
-                                <Image style={styles.reviewImage} source={{ uri: trailData.image }} />
-                                <Text style={styles.reviewAuthor}>By {trailData.author}</Text>
-                                <Text style={styles.reviewContent}>{trailData.review}</Text>
-                            </View>
-                        )
-                    }
-                    <Text style={styles.message}>LONGPRESS TO GO BACK</Text>
-                </ScrollView>
-            </View>
-        </GestureDetector>
-    );
 
+                    {loading ? (
+                        <ActivityIndicator size='large'/>
+                    ) : (
+                        <View>
+                            <View style={styles.reviewTitleRow}>
+                                <Text style={styles.reviewTitle}>{trailData.title}</Text>
+                            </View>
+                            <Image style={styles.reviewImage} source={{uri: trailData.image}}/>
+                            <Text style={styles.reviewAuthor}>By {trailData.author}</Text> 
+                            <Text style={styles.reviewContent}>{trailData.review}</Text>    
+                        </View>        
+                    )}    
+                    <Text style={styles.message}>LONGPRESS TO GO BACK</Text>    
+                </ScrollView>    
+            </View>    
+        </GestureDetector>
+    )
 }
 
 const styles = StyleSheet.create({
@@ -74,7 +72,7 @@ const styles = StyleSheet.create({
     reviewTitleRow: {
         backgroundColor: '#000000',
         paddingTop: 10,
-        marginTop: 5,
+        marginTop: 5
     },
     reviewTitle: {
         fontFamily: 'OpenSans-BoldItalic',
@@ -84,7 +82,7 @@ const styles = StyleSheet.create({
     reviewImage: {
         height: 400,
         width: 600,
-        resizeMode: 'cover'
+        resizeMode: 'cover'    
     },
     reviewAuthor: {
         alignSelf: 'flex-end',
@@ -103,7 +101,7 @@ const styles = StyleSheet.create({
     message: {
         alignSelf: 'center',
         fontFamily: 'OpenSans-BoldItalic',
-        color: '#000000'
+        color: '#000000'    
     }
 });
 

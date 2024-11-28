@@ -42,7 +42,7 @@ const Trail = (props) => {
         try {
             const { 
                 data: reviews 
-            } = await  axios.get('http://192.168.1.66:3000/trailreviews');
+            } = await  axios.get('http://192.168.1.70:3000/trailreviews');
             setRemoteData(reviews);
         } catch(err) {
             setError(true);

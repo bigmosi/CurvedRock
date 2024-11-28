@@ -12,7 +12,7 @@ import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import ShopItem from '../components/ShopItem';
 
-const BootShop = (props) => {
+const ClimbingShop = (props) => {
     const [remoteData, setRemoteData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -20,9 +20,9 @@ const BootShop = (props) => {
     const getData = async () => {
         try {
             const { 
-                data: boots 
-            } = await  axios.get('http://192.168.1.70:3000/products?category=Boot');
-            setRemoteData(boots);
+                data: gear 
+            } = await  axios.get('http://192.168.1.70:3000/products?category=Climbing');
+            setRemoteData(gear);
         } catch(err) {
             setError(true);
         } finally {
@@ -49,7 +49,7 @@ const BootShop = (props) => {
             <View style={styles.container}>
                 <Header />
                 <View style={styles.storeTitleRow}>
-                    <Text style={styles.storeTitle}>Shop Boots</Text>
+                    <Text style={styles.storeTitle}>Shop Climbing Gear</Text>
                 </View>
 
                 {loading ? (
@@ -70,7 +70,7 @@ const BootShop = (props) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#686868'
+        backgroundColor: '#FC8A49'
     },
     storeTitleRow: {
         backgroundColor: '#000000',
@@ -90,4 +90,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default BootShop;
+export default ClimbingShop;

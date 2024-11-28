@@ -1,41 +1,43 @@
-import {
+import { 
     StyleSheet,
-    View,
-    Text,
-    ImageBackground,
+    View, 
+    ImageBackground, 
+    Text, 
     TouchableWithoutFeedback
-} from "react-native";
-import { Navigation } from "react-native-navigation";
+} from 'react-native';
+import { Navigation } from 'react-native-navigation';
 
 const Shops = ({imageSRC, title, description, target}) => {
     const image = {uri: imageSRC};
-
     return (
         <View style={styles.container}>
             <TouchableWithoutFeedback
-              onPress={() => Navigation.push('carved', {
-                component: {
-                    name: target
-                }
-              })}
+                onPress={() => Navigation.push('carved', {
+                                component: {
+                                    name: target
+                                }
+                            })
+                        }
             >
-             <ImageBackground source={image} style={styles.background}>
-             <View style={styles.titleRow}>
-                <Text style={styles.shopTitle}>{title}</Text>
-                <Text style={styles.shopDescription}>{description}</Text>
-             </View>
-            </ImageBackground>
-            </TouchableWithoutFeedback>
+                <ImageBackground source={image} style={styles.background}>
+                    <View style={styles.titleRow}>
+                        <Text style={styles.shopTitle}>{title}</Text>
+                        <Text style={styles.shopDescription}>
+                            {description}
+                        </Text>
+                    </View>
+                </ImageBackground>    
+            </TouchableWithoutFeedback>    
         </View>
-    );
+    )        
 }
 
 const styles = StyleSheet.create({
-    container: {
+    container:{
         flex: 1,
         padding: 40
     },
-    background: {
+    background:{
         resizeMode: 'cover',
         height: 180,
         flexDirection: 'column-reverse'
@@ -47,14 +49,14 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     shopTitle: {
-        fontFamily: 'OpenSans-ExtraBolid',
+        fontFamily: 'OpenSans-ExtraBold',
         fontSize: 24,
-        color: '#000000'
+        color: '#000000'     
     },
     shopDescription: {
         fontFamily: 'OpenSans-Regular',
         fontSize: 16,
-        color: '#FC8A49'
+        color: '#FC8A49'     
     }
 });
 

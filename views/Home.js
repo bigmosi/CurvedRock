@@ -61,26 +61,42 @@ const Home = (props) => {
                     />
                     <Text style={styles.trailReviewPark1}>ASPHALT</Text>
                     <Text style={styles.trailReviewPark2}>NATIONAL PARK</Text>
-                    <TouchableOpacity style={styles.trailButton} onPress={() => Navigation.push(props.componentId, {
-                        component: {
-                            name: 'Trial'
+                    <TouchableOpacity 
+                        style={styles.trailButton}
+                        onPress={() => Navigation.push(props.componentId, {
+                                component: {
+                                    name: 'Trail'
+                                }
+                            })
                         }
-                    })}>
+                    >
                         <Text style={styles.trailButtonText}>SEE REVIEW</Text>
                     </TouchableOpacity>    
-                </View> 
+                </View>
                 <Shops
-                  imageSRC={'https://i.imgur.com/GvAlRYf.jpg'}
-                  title='TOP TIER GEAR'
-                  description='BROWSE ALL GEAR'
-                  target='Store'
+                    imageSRC={'https://i.imgur.com/M2nMlMw.jpg'}
+                    title='TOP TIER GEAR'
+                    description='BROWSE ALL GEAR'
+                    target='Store'
                 />
-                 <Shops
-                  imageSRC={'https://i.imgur.com/M2nMlMw.jpg'}
-                  title='TOP HAPPY FEET'
-                  description='BROWSE BOOTS'
-                  target='BootShop'
+                <Shops
+                    imageSRC={'https://i.imgur.com/GvAlRYf.jpg'}
+                    title='HAPPY FEET'
+                    description='BROWSE BOOTS'
+                    target='BootShop'
                 />
+                <Shops
+                    imageSRC={'https://i.imgur.com/dWRyUvS.jpg'}
+                    title='MEET AT THE TOP'
+                    description='BROWSE CLIMBING GEAR'
+                    target='ClimbingShop'
+                />
+                <Shops
+                    imageSRC={'https://i.imgur.com/9gd1dpm.jpg'}
+                    title='MAKE A SPLASH'
+                    description='BROWSE KAYAKS'
+                    target='KayakShop'
+                />                 
                 <Footer />   
             </ScrollView>    
         </View>    

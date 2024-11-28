@@ -10,7 +10,7 @@ import {
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Header from '../components/Header';
-import ShopItem from './ShopItem';
+import ShopItem from '../components/ShopItem';
 
 const Store = (props) => {
     const [remoteData, setRemoteData] = useState([]);
@@ -21,7 +21,7 @@ const Store = (props) => {
         try {
             const { 
                 data: products 
-            } = await  axios.get('http://192.168.1.66:3000/products');
+            } = await  axios.get('http://192.168.1.70:3000/products');
             setRemoteData(products);
         } catch(err) {
             setError(true);

@@ -1,6 +1,12 @@
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from "react-native";
-import { Navigation } from "react-native-navigation";
-import { useState } from "react";
+import { 
+    StyleSheet,
+    View, 
+    Text, 
+    TextInput, 
+    TouchableOpacity 
+} from 'react-native';
+import { Navigation } from 'react-native-navigation';
+import { useState } from 'react';
 
 const Footer = () => {
     const [emailText, setEmailText] = useState('Enter email address');
@@ -14,7 +20,7 @@ const Footer = () => {
                 </Text>
                 <TextInput
                     style={styles.footerInput}
-                    onChangeText={text => setEmailText(text)}
+                    onChangeText={text => setEmailText(text)} 
                     value={emailText}
                 />
                 <TouchableOpacity style={styles.footerButton}>
@@ -23,40 +29,47 @@ const Footer = () => {
             </View>
             <View style={styles.container}>
                 <Text style={styles.support}>CUSTOMER SUPPORT</Text>
-                <Text style={styles.supportOptions} onPress={() => Navigation.push('carved', {
-                    component: {
-                        name: 'Contact'
+                <Text 
+                    style={styles.supportOptions}
+                    onPress={() => Navigation.push('carved', {
+                                        component: {
+                                            name: 'Contact'
+                                        }
+                                    })
                     }
-                })}>CONTACT US</Text>
+                >CONTACT US</Text>
                 <Text style={styles.supportOptions}>ORDER TRACKER</Text>
-                <Text style={styles.supportOptions}>RETURN & REFUNDS</Text>
+                <Text style={styles.supportOptions}>RETURNS & REFUNDS</Text>
                 <Text style={styles.supportOptions}>SIZING STORE LOCATOR</Text>
-                <Text style={styles.supportOptions}>SITE MAP</Text>
-
+                <Text style={styles.supportOptions}>SITE MAP</Text>    
             </View>
             <View style={styles.container}>
                 <Text style={styles.support}>COMPANY INFO</Text>
-                <Text
+                <Text 
                     style={styles.supportOptions}
                     onPress={() => Navigation.push('carved', {
-                        component: {
-                            name: 'About'
-                        }
-                    })
+                                        component: {
+                                            name: 'About'
+                                        }
+                                    })
                     }
-                >ABOUT</Text>
-                <Text style={styles.supportOptions}
+                >
+                    ABOUT
+                </Text>
+                <Text 
+                    style={styles.supportOptions}
                     onPress={() => Navigation.push('carved', {
-                        component: {
-                            name: 'Careers'
-                        }
-                    })}
+                                        component: {
+                                            name: 'Careers'
+                                        }
+                                    })
+                    }
                 >CAREERS</Text>
                 <Text style={styles.supportOptions}>PRIVACY & TERMS</Text>
-                <Text style={styles.supportOptions}>FOLLOW US</Text>
-            </View>
-        </View>
-    );
+                <Text style={styles.supportOptions}>FOLLOW US</Text>    
+            </View>    
+        </View>    
+    )
 }
 
 const styles = StyleSheet.create({
@@ -79,7 +92,7 @@ const styles = StyleSheet.create({
         color: '#000000',
         paddingBottom: 10
     },
-    footerInput: {
+    footerInput:{
         borderWidth: 1,
         width: 175,
         height: 40,
@@ -91,7 +104,7 @@ const styles = StyleSheet.create({
         width: '40%',
         backgroundColor: '#000000',
         marginTop: 10,
-        borderRadius: 20,
+        borderRadius: 5,
     },
     footerButtonText: {
         fontSize: 20,
@@ -101,14 +114,14 @@ const styles = StyleSheet.create({
     support: {
         fontFamily: 'OpenSans-Bold',
         fontSize: 16,
-        marginBottom: 10
+        marginBottom: 10    
     },
     supportOptions: {
         fontFamily: 'OpenSans-Regular',
         fontSize: 12,
         color: '#FFFFFF',
         paddingBottom: 3
-    }
+    }    
 });
 
 export default Footer;
